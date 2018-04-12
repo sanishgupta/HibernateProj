@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="RetailTransaction" table="TR_TRN" >
+        <!-- <id name="sequenceId" column="SEQUENCE_ID" type="long">
+        	<generator class="increment" />
+          <generator class="sequence">
+            <param name="sequence">TAB_CUSTOMER_SEQ</param>
+          </generator>
+        </id> -->
+        
+        <id name="sequenceId" column="SEQUENCE_ID" type="long">
+        	<generator class="native"></generator>
+        </id>
+        <property  name="retailStoreID" column ="ID_STR_RT" insert="true" update="true" type="java.lang.String" />
+        <property  name="workstationID" column ="ID_WS" insert="true" update="true" type="java.lang.String" />
+        <property  name="businessDayDate" column ="DC_DY_BSN" insert="true" update="true" type="java.lang.String" />
+        <property  name="transactionSequenceNumber" column ="AI_TRN" insert="true" update="true" type="java.lang.Integer" />
+        <property  name="operatorID" column ="ID_OPR" insert="true" update="true" type="java.lang.String" />
+        <property  name="transactionTypeCode" column ="TY_TRN" insert="true" update="true" type="java.lang.String" />
+        <property  name="workstationStartDateTimestamp" column ="TS_TM_SRT" insert="true" update="true" type="java.util.Date" />
+        <property  name="beginDateTimestamp" column ="TS_TRN_BGN" insert="true" update="true" type="java.util.Date" />
+        <property  name="endDateTimestamp" column ="TS_TRN_END" insert="true" update="true" type="java.util.Date" />
+        <property  name="trainingFlag" column ="FL_TRG_TRN" insert="true" update="true" type="java.lang.String" />
+        <property  name="keyedOfflineFlag" column ="FL_KY_OFL" insert="true" update="true" type="java.lang.String" />
+        <property  name="transactionStatusCode" column ="SC_TRN" insert="true" update="true" type="java.lang.Short" />
+        <property  name="salesAssociateIDEmployeeID" column ="ID_EM" insert="true" update="true" type="java.lang.String" />
+        <property  name="customerInfo" column ="INF_CT" insert="true" update="true" type="java.lang.String" />
+        <property  name="customerInfoType" column ="TY_INF_CT" insert="true" update="true" type="java.lang.Short" />
+        <property  name="tenderRepositoryID" column ="ID_RPSTY_TND" insert="true" update="true" type="java.lang.String" />
+        <property  name="currencyID" column ="ID_CNY_ICD" insert="true" update="true" type="java.lang.Integer" />
+        <property  name="transactionTLogBatchID" column ="ID_TLOG_BTCH" insert="true" update="true" type="java.lang.Integer" />
+        <property  name="transactionArchiveBatchID" column ="ID_BTCH_ARCH" insert="true" update="true" type="java.lang.String" />
+        <property  name="transactionRTLogBatchID" column ="ID_RTLOG_BTCH" insert="true" update="true" type="java.lang.String" />
+        <property  name="inventoryReservationBatchID" column ="ID_BTCH_INV_RESV" insert="true" update="true" type="java.lang.String" />
+        <property  name="transactionPostProcessingStatusCode" column ="SC_PST_PRCS" insert="true" update="true" type="java.lang.Short" />
+        <property  name="transactionReentryFlag" column ="FL_TRE_TRN" insert="true" update="true" type="java.lang.String" />
+        <property  name="salesAssociateModifiedFlag" column ="FL_SLS_ASSC_MDF" insert="true" update="true" type="java.lang.String" />
+        <property  name="recordCreatedTimestamp" column ="TS_CRT_RCRD" insert="true" update="true" type="java.util.Date" />
+        <property  name="recordLastModifiedTimestamp" column ="TS_MDF_RCRD" insert="true" update="true" type="java.util.Date" />
+        <property  name="taxExemptFlag" column ="FL_TRG_TAX_EXMP" insert="true" update="true" type="java.lang.String" />
+     </class>
+</hibernate-mapping>
